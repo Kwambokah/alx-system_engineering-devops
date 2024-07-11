@@ -42,7 +42,7 @@ frontend hkand-frontend
 frontend hkand-frontend-https
         bind *:443 ssl crt /etc/haproxy/certs/www.hkand.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend milanenterprise-backend
+        default_backend hkand-backend
 backend hkand-backend
         balance roundrobin
         server 496747-web-01 54.84.166.134:80 check
